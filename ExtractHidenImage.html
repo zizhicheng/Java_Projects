@@ -1,0 +1,238 @@
+<head>
+  <title> Zizhi's Portfolio </title>
+    <style>
+      th{
+        text-align: center;
+      }
+      body{
+        background-color: lightyellow;
+      }
+      b{
+         background-color: lightgreen;
+      }
+  </style>
+</head>
+
+<body>
+  <h2> Steganography </h2>
+  <b> Original images are in different sizes </b>
+    <table>
+      <tr>
+        <th> Start Image </th>
+        <th> Hide Image
+          <th>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://lh3.googleusercontent.com/-1pDhOjb316E/VwA6mQ8ABuI/AAAAAAAAAS4/rn0_ELwRmJMArH4qo6uVBe6IgGuAEC8xA/w346-h519/astrachan.jpg">
+        </td>
+        <td>
+          <img src="https://lh3.googleusercontent.com/-XmkMOxwHlbg/VwA6pe8109I/AAAAAAAAATY/oi8hdejkUl4Hr4RPjH4tb1ZLQ4PqhoXVg/w346-h519/duvall.jpg">
+        </td>
+      </tr>
+    </table>
+ <p><b> Algorithm</b></p>
+  <p> The purpose of this project is to hide an image in another image.</p><p> First, we need to make two images into the same size, the function crop is for this purpose.</p><p> Secondly, function pixelChange and chop2hide will replace the last few bits of the start image with zeros.</p><p> And how many bits will be replaced depends on how many bits you want to hide for the hiden image.</p><p>Thirdly, the function shift will take hiden bits from the image you want to hide.</p><p> Finally, the function combine will add start image and hide image together. Here we go, you hide an image in another one!   </p><p>For extraction, just get the last few bits from the combined image and add zeros at the end. Then the hiden image will be extracted. </p><p>Since we replace the last few digits with zero, we will loose some resolution of the hiden image</p> <p> The less bits you hide, the more resolution you will loose for the extracted image, but less resolution you will loose for the start image in the combined output.</p><p>My code has the flexibility of how many bits you want to hide, I showed 3 cases by hiding 2bits, 4bits, and 6bits on this page.</p> <p>How about hide 1bit, 3bits, 5bits and 7bits, evern 0bit or 8bits?</p><p>Let's run my code by yourself and find it out!  </p>
+  <p> <b>Cropped images with same size </b></p>
+<table>
+  <tr>
+    <th> Cropped start image </th>
+  <th> Cropped hide image </th>
+    </tr>
+  <tr>
+    <td> 
+      <img src="https://lh3.googleusercontent.com/-Z8nZJyJoL9Y/VwA9Hz4sweI/AAAAAAAAAUE/pkHn6ruVpK8JqNZamvkJQKMMzrzvQ1J2A/w346-h519/Unknown.png">
+      </td>
+    <td>
+      <img src="https://lh3.googleusercontent.com/-XmkMOxwHlbg/VwA6pe8109I/AAAAAAAAATY/oi8hdejkUl4Hr4RPjH4tb1ZLQ4PqhoXVg/w346-h519/duvall.jpg">
+      </td>
+    </tr>
+</table> 
+    <p><b>Hide image by 6 bits</b></p>
+
+  <table>
+    <tr>
+      <th> Combined Image with hiden image </th>
+      <th> Extracted image </th>
+      </tr> 
+    <tr>
+      <td>
+        <img src="https://lh3.googleusercontent.com/-sX6MyoaXFic/VwBFxuMpRJI/AAAAAAAAAYY/U8PYpG7q2KYO9g2GIdTP_8u4i9oFjNiiw/w346-h519/hide6.png">
+        </td>
+      <td>
+        <img src="https://lh3.googleusercontent.com/-8O8a1_kok_M/VwBF3FOgS-I/AAAAAAAAAY4/AkDpSetox54upbkdF2FVyMs31WQWWvT6Q/w346-h519/extrac6.png">
+        </td>
+      </tr>
+    </table>
+<p> <b> Hide image by 4 bits </b></p>
+  <table>
+    <tr>
+      <th> Combined Image with hiden image </th>
+      <th> Extracted image </th>
+      </tr> 
+    <tr>
+      <td>
+        <img src="https://lh3.googleusercontent.com/-ergQG4RG9ms/VwBAFWFMB5I/AAAAAAAAAU0/4U0pujUi4pgRBGBirC9xqfR9SiezOA_qA/w346-h519/withhide.png">
+        </td>
+      <td>
+        <img src="https://lh3.googleusercontent.com/-CxfVBLRywFY/VwBAtqtuUBI/AAAAAAAAAVY/mFGJ__gkSn87BZQ3G1LlnSd5fxy6ZVq_g/w346-h519/extra4.png">
+        </td>
+      </tr>
+    </table>
+  <p><b>Hide image by 2 bits</b></p>
+
+  <table>
+    <tr>
+      <th> Combined Image with hiden image </th>
+      <th> Extracted image </th>
+      </tr> 
+    <tr>
+      <td>
+        <img src="https://lh3.googleusercontent.com/-nFqpuJ3a7KY/VwBFf4cti6I/AAAAAAAAAXU/RW2V-MxJj1kTsGWb6IVK2kpS1eRa1hCKA/w346-h519/hide2.png">
+        </td>
+      <td>
+        <img src="https://lh3.googleusercontent.com/-i8GqrMDyrRs/VwBFlEH_MnI/AAAAAAAAAX0/Z_VoB9pr0eACq9tYu3nF8f3ttdC0RLGLw/w346-h519/extrac2.png">
+        </td>
+      </tr>
+    </table>
+    <p><b>Extract hiden image from provided image </b></p>
+
+  <table>
+    <tr>
+      <th> Original image </th>
+      <th> Extracted hiden image </th>
+      </tr> 
+    <tr>
+      <td>
+        <img src="https://lh3.googleusercontent.com/-S4wo49Rr79Q/VwBHvzfM0uI/AAAAAAAAAZ4/OaZOX6VCbNUuf5RHyJUWWQrG2fRZRfc1w/w346-h519/prohide.png">
+        </td>
+      <td>
+        <img src="https://lh3.googleusercontent.com/-4o_qFguHJk8/VwAfzDltsbI/AAAAAAAAAQk/qE6flV56wushN4yzYTReI0bqiS4VlWZ5g/w346-h519/zizhi_image%25281%2529.png">
+        </td>
+      </tr>
+    </table>
+  <p><b> Algorithm</b></p>
+  <p>Since we already write the code for hide and extract, now, extract an image from another one becomes very easy!</p><p>Just use funcetion extract with 2 hiden bits, here you go, the hiden image is extracted! </p>
+  <p> <b> Code for hide and extract image by selected hiden bits </b></p>
+<p>
+  <pre>
+var hideBits = 6; // Choose number of bits to hide (1~7)
+var coiHide = Math.pow(2,hideBits);
+var coiShift = Math.pow(2,(8-hideBits));
+
+function crop(image,width,height){
+   var newStartImage = new SimpleImage(width,height);
+   for(var pixel of image.values()){
+       var x = pixel.getX();
+       var y = pixel.getY();
+       if(x < width && y < height){ // less than / and
+           var newPixel = newStartImage.getPixel(x,y);
+           newPixel.setRed(pixel.getRed());
+           newPixel.setGreen(pixel.getGreen());
+           newPixel.setBlue(pixel.getBlue());
+       }
+   }
+   return newStartImage;
+}
+function pixelChange(value){
+   var newValue = Math.floor(value/coiHide)*coiHide;
+   return newValue;
+}
+function chop2hide(image){
+   for(var px of image.values()){
+       px.setRed(pixelChange(px.getRed()));
+       px.setGreen(pixelChange(px.getGreen()));
+       px.setBlue(pixelChange(px.getBlue()));
+   }
+   return image;
+}
+function shift(hide){
+   for(var px of hide.values()){
+       px.setRed(Math.floor(px.getRed()/coiShift));
+       px.setGreen(Math.floor(px.getGreen()/coiShift));
+       px.setBlue(Math.floor(px.getBlue()/coiShift));
+   }
+   return hide;
+}
+function combine(startImage,hideImage){
+   for(var npx of startImage.values()){
+       var x = npx.getX();
+       var y = npx.getY();
+       var nhpx = hideImage.getPixel(x,y);
+       npx.setRed(npx.getRed() + nhpx.getRed());
+       npx.setGreen(npx.getGreen() + nhpx.getGreen());
+       npx.setBlue(npx.getBlue() + nhpx.getBlue());
+   }
+   return startImage;
+}
+
+function extract(image,coiHide,coiShift){
+   var exImage = new SimpleImage(outImage.getWidth(),outImage.getHeight());
+   for(var px of exImage.values()){
+      var x = px.getX();
+      var y = px.getY();
+      var outpx = outImage.getPixel(x,y);
+      var outr = outpx.getRed();
+      var outg = outpx.getGreen();
+      var outb = outpx.getBlue();
+      px.setRed((outr - Math.floor(outr/coiHide)*coiHide)*coiShift);
+      px.setGreen((outg - Math.floor(outg/coiHide)*coiHide)*coiShift);
+      px.setBlue((outb - Math.floor(outb/coiHide)*coiHide)*coiShift);
+   }
+   return exImage;
+}
+
+var startImage = new SimpleImage("astrachan.jpg");
+var hideImage = new SimpleImage("duvall.jpg");
+
+var cropWidth = startImage.getWidth();
+if(hideImage.getWidth() < cropWidth){
+   cropWidth = hideImage.getWidth();
+}
+var cropHeight = startImage.getHeight();
+if(hideImage.getHeight() < cropHeight){ 
+   cropHeight = hideImage.getHeight();
+}
+
+croppedstartImage = crop(startImage,cropWidth,cropHeight); 
+print(croppedstartImage);
+croppedhideImage = crop(hideImage,cropWidth,cropHeight); 
+print(croppedhideImage);
+
+var choppedstartImage = chop2hide(croppedstartImage);
+var shiftedhideImage = shift(croppedhideImage);
+var outImage = combine(choppedstartImage,shiftedhideImage);
+print(outImage);
+
+var extrImage = extract(outImage,coiHide,coiShift);
+print(extrImage);
+</pre>
+</p>
+<p> <b>Code for extract hiden image from provided image </b></p>
+<pre>
+var hideBits = 2; 
+var coiHide = Math.pow(2,hideBits);
+var coiShift = Math.pow(2,(8-hideBits));
+
+function extract(image,coiHide,coiShift){
+   var exImage = new SimpleImage(outImage.getWidth(),outImage.getHeight());
+   for(var px of exImage.values()){
+      var x = px.getX();
+      var y = px.getY();
+      var outpx = outImage.getPixel(x,y);
+      var outr = outpx.getRed();
+      var outg = outpx.getGreen();
+      var outb = outpx.getBlue();
+      px.setRed((outr - Math.floor(outr/coiHide)*coiHide)*coiShift);
+      px.setGreen((outg - Math.floor(outg/coiHide)*coiHide)*coiShift);
+      px.setBlue((outb - Math.floor(outb/coiHide)*coiHide)*coiShift);
+    
+   }
+   return exImage;
+}
+
+var outImage = new SimpleImage("prohide.png");
+var extrImage = extract(outImage,coiHide,coiShift);
+print(extrImage);
+</pre>
+</body>
